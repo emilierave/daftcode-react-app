@@ -2,7 +2,7 @@
 
 First app F4B-daftcode
 
-Link to this app is available [here](https://github.com/emilierave/test-react-daftcode/commits/new-branch/src)
+Link to this app live is available [here](https://neon-parfait-df787c.netlify.app)
 
 # Getting Started with Create React App
 
