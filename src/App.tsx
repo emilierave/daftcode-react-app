@@ -3,6 +3,9 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  const dialogAlert = () => {
+    alert('hello react')
+  }
   return (
     <div className="App">
       <header className="App-header">
