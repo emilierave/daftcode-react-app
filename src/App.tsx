@@ -13,6 +13,16 @@ function App() {
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
+        <button onClick={dialogAlert}>Open alert</button>
+        <a
+            className="App-link"
+            href="https://github.com/emilierave"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+          test-react-project
+        </a>
+
         <a
           className="App-link"
           href="https://reactjs.org"
