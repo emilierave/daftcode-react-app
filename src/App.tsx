@@ -16,7 +16,7 @@ function App() {
         <button onClick={dialogAlert}>Open alert</button>
         <a
             className="App-link"
-            href="https://github.com/emilierave"
+            href="https://github.com/emilierave/test-react-app-F4B-daftcode"
             target="_blank"
             rel="noopener noreferrer"
         >
