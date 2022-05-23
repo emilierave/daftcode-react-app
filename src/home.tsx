@@ -52,10 +52,11 @@ export const InputForm = (props?: IFormInputValue) => {
             placeholder="Some name"
             onInput={handleInputChange}
             value={inputValue}
-            />
-        <br/>
-        <button onClick={handleSubmit} disabled={!formReadyToSubmit}>sent</button>
-    </div2>
+            /></form>
+        <small>A name which You'd like to give to abstract.</small>
+            <br/>
+        <button onClick={handleSubmit}disabled={!formReadyToSubmit}>sent</button>
+    </div>
 }
 
 export default InputForm
