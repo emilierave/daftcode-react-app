@@ -25,24 +25,15 @@ export const InputForm = (props?: InputFormProps) => {
         }
     }
     const handleSubmit = useCallback(() => {
-        if (formReadyToSubmit) {
-            localStorage.setItem(storageFormKey, inputValue)
-        }
     }, [])
-
     useEffect(() => {
-        let valueToSet = '';
+        let valueToSet: string;
         const localStorageData = localStorage.getItem(storageFormKey)
         if (!!localStorageData) {
             valueToSet = localStorageData;}
-        else {
-            if (!!props?.defaultValue) {
-                valueToSet = props?.defaultValue;
-            }
-        }
+        else{valueToSet = props?.defaultValue;}
         setInputValue(valueToSet);
     }, [])
-    const [] = useState(0);
     return<div style={{display: "flex", flexDirection: 'column'}}>
         {displayError && <div style={{color: 'red'}}>{errorMessage}</div>}
         <form><div>The name:</div>
