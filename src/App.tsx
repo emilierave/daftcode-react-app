@@ -16,9 +16,11 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.tsx</code> and save to reload.
+          Give a name to an abstract woman above
         </p>
-        <button onClick={dialogAlert}>Open alert</button>
+        <button onClick={dialogAlert}>Give Me a hint</button>
+        <button onClick={dialogAlert2}>Any hint, please</button>
+        <InputForm/>
         <a
             className="App-link"
             href="https://github.com/emilierave/daftcode-react-app"
