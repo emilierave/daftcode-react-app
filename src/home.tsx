@@ -22,11 +22,11 @@ const InputForm = () => {
         if (win.getItem("name")) {
             setName(win.getItem("name"));
         }
-    }, []);
+    });
 
     useEffect(() => {
         win.setItem("name", name);
-    }, [name]);
+    },);
 
     return (
         <div className="container">
