@@ -45,7 +45,7 @@ export const InputForm = (props?: InputFormProps) => {
     const [] = useState(0);
     return<div style={{display: "flex", flexDirection: 'column'}}>
         {displayError && <div style={{color: 'red'}}>{errorMessage}</div>}
-        <div>The name:</div>
+        <form><div>The name:</div>
         <input
             autoComplete="off"
             type="text"
@@ -55,7 +55,7 @@ export const InputForm = (props?: InputFormProps) => {
             /></form>
         <small>A name which You'd like to give to abstract.</small>
             <br/>
-        <button onClick={handleSubmit}disabled={!formReadyToSubmit}>sent</button>
+        <button onClick={handleSubmit} disabled={!formReadyToSubmit}>sent</button>
     </div>
 }
 
