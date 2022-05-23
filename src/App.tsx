@@ -2,7 +2,6 @@ import logo from './DSC00202-copy.svg';
 import React from 'react';
 import InputForm from "./home";
 import './App.css';
-
 function App() {
   const dialogAlert = () => {
     alert('There is no hint in here')
