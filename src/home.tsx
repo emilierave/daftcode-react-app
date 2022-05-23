@@ -22,11 +22,11 @@ const InputForm = () => {
         if (win.getItem("name")) {
             setName(win.getItem("name"));
         }
-    });
+    }, []);
 
     useEffect(() => {
         win.setItem("name", name);
-    },);
+    }, [name]);
 
     return (
         <div className="container">
@@ -41,7 +41,7 @@ const InputForm = () => {
                             setName(e.target.value);
                         }}
                     />
-                    {nameErr ? <span>Invalid User name</span> : null}
+                    {nameErr ? <span>it is wrong</span> : null}
                 </div>
                 <div className="btnSubmit">
                     <button>Submit</button>
