@@ -11,6 +11,7 @@ function App() {
     alert('There is no good or bad name, it is just a name, do not worry')
   }
   return (
+      <main>
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
@@ -36,7 +37,9 @@ function App() {
         </a>
       </header>
     </div>
-  );
+  </main>
+  )
+  return;
 }
 
 export default App;
