@@ -1,9 +1,9 @@
 import {useState, useEffect, useCallback} from "react";
-interface IFormInputValue {
+interface InputFormProps {
     defaultValue?: string;
 }
 const storageFormKey = 'inputValue';
-export const InputForm = (props?: IFormInputValue) => {
+export const InputForm = (props?: InputFormProps) => {
     const [displayError, setDisplayError] = useState<boolean>(false)
     const [inputValue, setInputValue] = useState<string>('empty')
     const [errorMessage, setErrorMessage] = useState<string>('')
@@ -43,7 +43,7 @@ export const InputForm = (props?: IFormInputValue) => {
         setInputValue(valueToSet);
     }, [])
     const [] = useState(0);
-    return<div2 style={{display: "flex", flexDirection: 'column'}}>
+    return<div style={{display: "flex", flexDirection: 'column'}}>
         {displayError && <div style={{color: 'red'}}>{errorMessage}</div>}
         <div>The name:</div>
         <input
