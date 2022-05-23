@@ -45,7 +45,7 @@ const InputForm = () => {
                             setName(e.target.value);
                         }}
                     />
-                    {nameErr ? <span>it is wrong</span> : null}
+                    {nameErr ? <p>it is wrong</p> : null}
                 </div>
                 <div className="btnSubmit">
                     <button>Submit</button>
