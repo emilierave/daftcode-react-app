@@ -22,10 +22,14 @@ const InputForm = () => {
         if (win.getItem("name")) {
             setName(win.getItem("name"));
         }
+
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     useEffect(() => {
         win.setItem("name", name);
+
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [name]);
 
     return (
