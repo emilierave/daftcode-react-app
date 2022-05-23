@@ -1,3 +1,4 @@
+// @ts-ignore
 import logo from "./DSC00202-copy.svg";
 import React from 'react';
 import InputForm from "./home";
@@ -39,8 +40,7 @@ function App() {
       </header>
     </div>
   </main>
-  )
-  return;
+  );
 }
 
 export default App;
