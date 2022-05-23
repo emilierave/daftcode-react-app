@@ -52,7 +52,7 @@ main {
   display: flex;
   position: absolute;
 }
-button, div2, input {
+button,form {
   font-family: "Open Sans", sans-serif;
   font-size: 16px;
   letter-spacing: 2px;
