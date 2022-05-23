@@ -26,14 +26,13 @@ function App() {
         >
           test-react-project
         </a>
-
         <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+            className="App-link"
+            href="https://en.wikipedia.org/wiki/Edge_cover"
+            target="_blank"
+            rel="noopener noreferrer"
         >
-          Learn React
+          edge cover
         </a>
       </header>
     </div>
