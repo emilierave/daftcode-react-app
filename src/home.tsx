@@ -1,54 +1,54 @@
-import {useState, useEffect, useCallback} from "react";
-interface InputFormProps {
-    defaultValue?: string;
-}
-const storageFormKey = 'inputValue';
-export const InputForm = (props?: InputFormProps) => {
-    const [displayError, setDisplayError] = useState<boolean>(false)
-    const [inputValue, setInputValue] = useState<string>('empty')
-    const [errorMessage, setErrorMessage] = useState<string>('')
-    const formReadyToSubmit = !(displayError || !inputValue);
-    const handleInputChange = (event: any) => {
-        const messageLength = event.target.value.length;
-        setInputValue(event.target.value);
-        if (messageLength < 3 || messageLength > 20) {
-            if (messageLength < 3) {
-                setErrorMessage('Name too short')
-            }
-            if (messageLength > 20) {
-                setErrorMessage('Name too long')
-            }
-            setDisplayError(true)}
-        else {
-            setDisplayError(false)
-            setErrorMessage('')
-        }
-    }
-    const handleSubmit = useCallback(() => {
-    }, [])
-    useEffect(() => {
-        let valueToSet: string;
-        const localStorageData = localStorage.getItem(storageFormKey)
-        if (!!localStorageData) {
-            valueToSet = localStorageData;}
-        else {valueToSet = props?.defaultValue}
-        setInputValue(valueToSet);
-// @ts-ignore
-    }, [])
-    return<div style={{display: "flex", flexDirection: 'column'}}>
-        {displayError && <div style={{color: 'red'}}>{errorMessage}</div>}
-        <form><div>The name:</div>
-        <input
-            autoComplete="off"
-            type="text"
-            placeholder="Some name"
-            onInput={handleInputChange}
-            value={inputValue}
-            /></form>
-        <small>A name which You'd like to give to abstract.</small>
-            <br/>
-        <button onClick={handleSubmit} disabled={!formReadyToSubmit}>sent</button>
-    </div>
-}
+import React, { useEffect, useState } from "react";
 
-export default InputForm
+const InputForm = () => {
+    const [name, setName] = useState("");
+    const [nameErr, setNameErr] = useState(false);
+    const win = window.localStorage;
+    function nameHandler(e) {
+        let itemName = e.target.value;
+        if (itemName.length < 3 || itemName.length > 20) {
+            setNameErr(true);
+        } else {
+            setNameErr(false);
+        }
+        setName(itemName);
+    }
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        win.clear();
+        setName("");
+    };
+    useEffect(() => {
+        if (win.getItem("name")) {
+            setName(win.getItem("name"));
+        }
+    }, []);
+
+    useEffect(() => {
+        win.setItem("name", name);
+    }, [name]);
+
+    return (
+        <div className="container">
+            <form onSubmit={handleSubmit}>
+                <div className="field">
+                    <label>Name</label>
+                    <input
+                        type="text"
+                        value={name}
+                        onInput={nameHandler}
+                        onChange={(e) => {
+                            setName(e.target.value);
+                        }}
+                    />
+                    {nameErr ? <span>Invalid User name</span> : null}
+                </div>
+                <div className="btnSubmit">
+                    <button>Submit</button>
+                </div>
+            </form>
+        </div>
+    );
+};
+
+export default InputForm;
