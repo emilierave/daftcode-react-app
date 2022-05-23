@@ -5,7 +5,10 @@ import './App.css';
 
 function App() {
   const dialogAlert = () => {
-    alert('hello react')
+    alert('There is no hint in here')
+  }
+  const dialogAlert2 = () => {
+    alert('There is no good or bad name, it is just a name, do not worry')
   }
   return (
     <div className="App">
