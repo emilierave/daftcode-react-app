@@ -28,7 +28,7 @@ export const InputForm = (props?: InputFormProps) => {
         if (formReadyToSubmit) {
             localStorage.setItem(storageFormKey, inputValue)
         }
-    }, [inputValue])
+    }, [])
 
     useEffect(() => {
         let valueToSet = '';
