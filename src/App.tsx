@@ -1,3 +1,4 @@
+import logo from './DSC00202-copy.svg';
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
