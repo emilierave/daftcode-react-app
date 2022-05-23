@@ -25,7 +25,7 @@ function App() {
             target="_blank"
             rel="noopener noreferrer"
         >
-          test-react-project
+          link to git repo
         </a>
         <a
             className="App-link"
