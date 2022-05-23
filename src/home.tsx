@@ -31,8 +31,9 @@ export const InputForm = (props?: InputFormProps) => {
         const localStorageData = localStorage.getItem(storageFormKey)
         if (!!localStorageData) {
             valueToSet = localStorageData;}
-        else{valueToSet = props?.defaultValue;}
+        else {valueToSet = props?.defaultValue}
         setInputValue(valueToSet);
+// @ts-ignore
     }, [])
     return<div style={{display: "flex", flexDirection: 'column'}}>
         {displayError && <div style={{color: 'red'}}>{errorMessage}</div>}
