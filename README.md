@@ -2,7 +2,7 @@
 
 First app F4B-daftcode
 
-Link to this app live is available [here](https://sage-stardust-ec9fae.netlify.app)
+Link to this app live is available [here](https://coruscating-meringue-30655c.netlify.app)
 
 # Getting Started with Create React App
 

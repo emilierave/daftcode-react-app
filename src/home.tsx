@@ -1,61 +1,58 @@
-import {useState, useEffect, useCallback} from "react";
-interface IFormInputValue {
-    defaultValue?: string;
-}
-const storageFormKey = 'inputValue';
-export const InputForm = (props?: IFormInputValue) => {
-    const [displayError, setDisplayError] = useState<boolean>(false)
-    const [inputValue, setInputValue] = useState<string>('empty')
-    const [errorMessage, setErrorMessage] = useState<string>('')
-    const formReadyToSubmit = !(displayError || !inputValue);
-    const handleInputChange = (event: any) => {
-        const messageLength = event.target.value.length;
-        setInputValue(event.target.value);
-        if (messageLength < 3 || messageLength > 20) {
-            if (messageLength < 3) {
-                setErrorMessage('Name too short')
-            }
-            if (messageLength > 20) {
-                setErrorMessage('Name too long')
-            }
-            setDisplayError(true)}
-        else {
-            setDisplayError(false)
-            setErrorMessage('')
+import React, { useEffect, useState } from "react";
+
+const InputForm = () => {
+    const [name, setName] = useState("");
+    const [nameErr, setNameErr] = useState(false);
+    const win = window.localStorage;
+    function nameHandler(e) {
+        let itemName = e.target.value;
+        if (itemName.length < 3 || itemName.length > 20) {
+            setNameErr(true);
+        } else {
+            setNameErr(false);
         }
+        setName(itemName);
     }
-    const handleSubmit = useCallback(() => {
-        if (formReadyToSubmit) {
-            localStorage.setItem(storageFormKey, inputValue)
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        win.clear();
+        setName("");
+    };
+    useEffect(() => {
+        if (win.getItem("name")) {
+            setName(win.getItem("name"));
         }
-    }, [inputValue])
+
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
 
     useEffect(() => {
-        let valueToSet = '';
-        const localStorageData = localStorage.getItem(storageFormKey)
-        if (!!localStorageData) {
-            valueToSet = localStorageData;}
-        else {
-            if (!!props?.defaultValue) {
-                valueToSet = props?.defaultValue;
-            }
-        }
-        setInputValue(valueToSet);
-    }, [])
-    const [] = useState(0);
-    return<div2 style={{display: "flex", flexDirection: 'column'}}>
-        {displayError && <div style={{color: 'red'}}>{errorMessage}</div>}
-        <div>The name:</div>
-        <input
-            autoComplete="off"
-            type="text"
-            placeholder="Some name"
-            onInput={handleInputChange}
-            value={inputValue}
-            />
-        <br/>
-        <button onClick={handleSubmit} disabled={!formReadyToSubmit}>sent</button>
-    </div2>
-}
+        win.setItem("name", name);
 
-export default InputForm
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [name]);
+
+    return (
+        <div className="container">
+            <form onSubmit={handleSubmit}>
+                <div className="field">
+                    <label>Name</label>
+                    <input
+                        type="text"
+                        value={name}
+                        onInput={nameHandler}
+                        onChange={(e) => {
+                            setName(e.target.value);
+                        }}
+                    />
+                    {nameErr ? <p>it is wrong</p> : null}
+                </div>
+                <div className="btnSubmit">
+                    <button>Submit</button>
+                </div>
+            </form>
+        </div>
+    );
+};
+
+export default InputForm;
