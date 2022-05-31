@@ -1,0 +1,60 @@
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&family=Monofett&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap');
+
+
+.landing-logo {
+    height: 200px;
+    pointer-events: none;
+}
+p {
+    font-family: 'IBM Plex Mono', monospace;
+    position: center;
+}
+a {
+    font-family: 'Metal Mania', monospace;
+    color: #65979a;
+    position: center;
+}
+@media (prefers-reduced-motion: no-preference) {
+    .landing-logo {
+        animation: App-logo-spin infinite 20s linear;
+    }
+}
+
+.landing-link {
+    color: #da1951;
+    display: flex;
+
+}
+
+@keyframes landing-logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+button,form {
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #481525;
+    cursor: pointer;
+    border: 3px solid;
+    padding: 0.25em 0.5em;
+    box-shadow: 1px 1px , 2px 2px 0 0, 3px 3px 0 0, 4px 4px 0 0, 5px 5px 0 0;
+    position: relative;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+button:active {
+    box-shadow: 0 0 0 0;
+    top: 5px;
+    left: 5px;
+}
