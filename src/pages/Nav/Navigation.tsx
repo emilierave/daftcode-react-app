@@ -1,6 +1,5 @@
 import { NavLinks } from './NavLinks';
 // @ts-ignore
-import styles from './Nav..scss';
 
 interface NavProps {
     toggleHamburger: () => void
