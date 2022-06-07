@@ -20,7 +20,8 @@ function App() {
             <Route path='/' element={<Home />} />
             <Route path='/about' element={<About />} />
             <Route path='/contact' element={<Contact />} />
-            <Route path='/form' element = {<InputForm  defaultValue={'Hello There'}/>} />
+            <Route path='/form' element = {<InputForm/>} />
+              <Route path ='/rick' element={ <Rick/>} />
           </Routes>
         </div>
 
