@@ -1,10 +1,5 @@
-
-
 import './App.scss';
-
 import InputForm from './pages/InputForm'
-
-import {Navbar} from './pages/Nav/Navbar'
 import {Home} from './pages/landingpage'
 import { Routes, Route } from 'react-router-dom';
 import Contact from './pages/contacpage';
@@ -27,7 +22,6 @@ function App() {
               <Route path ='/rick' element={ <Rick/>} />
           </Routes>
         </div>
-
       </div>
   );
 }
