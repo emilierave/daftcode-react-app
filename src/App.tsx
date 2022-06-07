@@ -7,8 +7,11 @@ import InputForm from './pages/InputForm'
 import {Navbar} from './pages/Nav/Navbar'
 import {Home} from './pages/landingpage'
 import { Routes, Route } from 'react-router-dom';
-import Contact from './pages/contacpage'
-import About from './pages/aboutpage'
+import Contact from './pages/contacpage';
+import About from './pages/aboutpage';
+import Rick from './pages/Rick';
+import ResponsiveAppBar from "./pages/nav";
+
 
 function App() {
 
