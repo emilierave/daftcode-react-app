@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-
 const InputForm = () => {
     const [name, setName] = useState("");
     const [nameErr, setNameErr] = useState(false);
@@ -38,6 +37,7 @@ const InputForm = () => {
                 <div className="field">
                     <label>Name</label>
                     <input
+                        label= "give it to me"
                         type="text"
                         value={name}
                         onInput={nameHandler}

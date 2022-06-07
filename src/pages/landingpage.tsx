@@ -16,7 +16,7 @@ export const Home= () =>{
         <main>
             <div className="landing">
                 <header className="landing-header">
-                    <img src={logo} className="landing-logo" alt="logo"  />
+                    <img src={logo} className="landing-logo" alt="logo" width="640" height="360"   />
                     <p>
                         Give a name to an abstract woman above
                     </p>
@@ -34,6 +34,7 @@ export const Home= () =>{
                         href="https://en.wikipedia.org/wiki/Edge_cover"
                         target="_blank"
                         rel="noopener noreferrer"
+
                     >edge cover</a>
                 </header>
             </div>
