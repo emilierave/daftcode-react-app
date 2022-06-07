@@ -17,6 +17,8 @@ a {
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
+    width: 100%; /* or max-width: 100%; */
+    height: auto;
   }
 }
 
@@ -72,5 +74,10 @@ body {
   margin: 0;
   font-family: Helvetica, sans-serif;
   background-color: #454f55;
+}
+
+img {
+  width: 100%; /* or max-width: 100%; */
+  height: auto;
 }
 
