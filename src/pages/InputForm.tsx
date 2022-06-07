@@ -37,6 +37,7 @@ const InputForm = () => {
                 <div className="field">
                     <label>Name</label>
                     <input
+                        label= "give it to me"
                         type="text"
                         value={name}
                         onInput={nameHandler}
