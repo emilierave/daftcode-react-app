@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-
 const InputForm = () => {
     const [name, setName] = useState("");
     const [nameErr, setNameErr] = useState(false);
