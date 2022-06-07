@@ -34,6 +34,7 @@ export const Home= () =>{
                         href="https://en.wikipedia.org/wiki/Edge_cover"
                         target="_blank"
                         rel="noopener noreferrer"
+
                     >edge cover</a>
                 </header>
             </div>
